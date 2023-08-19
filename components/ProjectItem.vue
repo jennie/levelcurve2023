@@ -2,20 +2,21 @@
   <div
     class="project"
     :class="project.featured ? 'featured' : ''"
-    :style="`order: ${project.position}`"
     :data-tags="project.tags.map((a) => a.slug).join(' ')">
-    <div class="cd">
-      <img
+    <div class="cd flex justify-center items-center my-0 mx-auto">
+      <nuxt-img
         v-if="project.images[0]"
-        :src="`${project.images[0].url}?bm=normal&w=400&fit=clip&auto=compress,format`" />
-      <!-- <img v-else src="/img/gem.png" /> -->
+        fit="inside"
+        width="400"
+        :src="project.images[0].url"
+        class="mx-auto" />
+      <nuxt-img v-else src="/img/gem.png" class="mx-auto" />
     </div>
+
     <div class="copy">
       <h2 class="title">{{ project.title }}</h2>
-      <h3 class="clients">
-        <span v-for="client in project.clients" v-if="client">{{
-          client.name
-        }}</span>
+      <h3 class="clients" v-if="project.clients">
+        <span v-for="client in project.clients">{{ client.name }}</span>
       </h3>
 
       <p class="date" v-if="project.date !== null">

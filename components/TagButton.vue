@@ -2,7 +2,7 @@
   <button
     class="btn btn-tag"
     :class="{ 'btn-on': isActive, 'btn-off': !isActive }"
-    @click="handleClick">
+    @click="selectTag">
     {{ tag.title }}
   </button>
 </template>
@@ -10,19 +10,18 @@
 <script setup>
 const props = defineProps({
   tag: Object,
-  selectedTag: String,
+  selectedTags: Array,
   onSelect: Function,
 });
 
-const isActive = computed(() => props.selectedTag === props.tag.slug);
+const isActive = computed(() => {
+  if (props.selectedTags) {
+    return props.selectedTags.includes(props.tag.slug);
+  }
+  return false;
+});
 
 const selectTag = () => {
-  console.log("TagButton selectTag called with:", props.tag.slug); // Add this line
   props.onSelect(props.tag.slug);
-};
-
-const handleClick = () => {
-  console.log("Button clicked!"); // Add this line
-  selectTag();
 };
 </script>

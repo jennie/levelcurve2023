@@ -48,7 +48,7 @@ section {
     & footer {
       text-align: center;
       padding-top: 4rem;
-      color: var(--color-primary);
+      color: theme(colors.primary);
     }
   }
 
@@ -57,7 +57,7 @@ section {
 
     & .inner {
       display: grid;
-      grid-gap: calc(var(--padding-primary) * 3);
+      grid-gap: calc(theme(spacing.primary) * 3);
 
       @media (--tablet) {
         max-width: 400px;
@@ -78,9 +78,9 @@ section {
 
     & .person {
       & .bio {
-        padding: var(--padding-primary);
+        padding: theme(spacing.primary);
         background-color: #fe938c;
-        border: solid 3px var(--color-light-gray);
+        border: solid 3px theme(colors.light-gray);
         box-shadow: 10px 10px 0px 0px #fff;
         margin-top: 2rem;
         color: #fff;
@@ -110,7 +110,7 @@ section {
       }
 
       @media (--mini), (--mobile), (--tablet) {
-        margin: calc(var(--padding-primary) * 2) auto;
+        margin: calc(theme(spacing.primary) * 2) auto;
         max-width: 80vw;
       }
 
@@ -147,148 +147,9 @@ section {
   text-align: center;
 }
 
-#projects {
-  grid-column-gap: calc(var(--padding-primary) * 2);
-  grid-row-gap: calc(var(--padding-primary) * 4);
-  margin-top: calc(var(--padding-primary) * 4);
-
-  & .project {
-    border-radius: 4px;
-    background-color: #fff;
-    margin-top: calc(var(--padding-primary) * 4);
-
-    @media (--tablet), (--desktop), (--desktop-xl) {
-      margin-top: 0;
-    }
-
-    &.featured {
-      grid-column: span 2;
-      grid-row: span 2;
-      background-color: var(--color-primary);
-      color: #d6d6ff;
-
-      & .cd {
-        & img {
-          box-shadow: 10px 10px 0px 0px var(--color-yellow);
-        }
-      }
-
-      & h4 {
-        & span {
-          background: #fff;
-          color: var(--color-primary);
-        }
-
-        border-bottom: solid 2px #fff;
-      }
-
-      & .copy {
-        & p b {
-          color: #fff;
-        }
-      }
-
-      & h2 {
-        color: #fff;
-      }
-
-      & h3 {
-        color: #d6d6ff;
-      }
-    }
-
-    & .cd {
-      display: block;
-      margin: calc(var(--padding-primary) * -2) auto 0 auto;
-      text-align: center;
-
-      & img {
-        box-shadow: 10px 10px 0px 0px var(--color-yellow);
-        max-width: 50%;
-        border: solid 3px var(--color-light-gray);
-      }
-    }
-
-    & .copy {
-      padding: var(--padding-primary);
-
-      & p b {
-        font-family: "Space Mono", monospace;
-        font-weight: 400;
-        color: var(--color-primary);
-      }
-
-      & .date {
-        text-transform: uppercase;
-        font-size: 11px;
-        text-align: center;
-      }
-    }
-
-    & h2 {
-    }
-
-    & h3 {
-      color: var(--color-primary);
-    }
-
-    & h2,
-    & h3 {
-      margin: 0;
-      text-align: center;
-    }
-
-    & h4 {
-      & span {
-        background: black;
-        padding: 3px 6px 0 6px;
-        display: inline;
-        color: #fff;
-      }
-
-      border-bottom: solid 2px #000;
-      width: 80%;
-      text-transform: uppercase;
-    }
-
-    & .clients {
-      & span {
-        &:before {
-          content: "/";
-          padding: 0 8px;
-        }
-
-        &:first-child:before {
-          padding: 0;
-          content: none;
-        }
-      }
-    }
-
-    & .services {
-      & span.service {
-        &:after {
-          content: "+";
-          padding: 0 12px;
-        }
-
-        &:last-child:after {
-          content: "";
-        }
-      }
-    }
-
-    & .credits {
-      & p {
-        margin: 0;
-      }
-    }
-  }
-}
-
 @define-mixin btn-primary {
   color: white;
-  background-color: var(--color-primary);
+  background-color: theme(colors.primary);
 }
 
 @define-mixin btn-off {
@@ -315,7 +176,7 @@ a.btn {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 14px;
-  color: var(--color-primary);
+  color: theme(colors.primary);
   text-decoration: none;
   text-decoration: none;
   padding: 0.8rem 1.6rem;

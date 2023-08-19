@@ -5,6 +5,9 @@ export default defineNuxtConfig({
       datoKey: process.env.DATO_CMS_TOKEN,
     },
   },
+  image: {
+    domains: ["datocms-assets.com"],
+  },
   modules: [
     "@formkit/nuxt",
     "@nuxtjs/tailwindcss",
