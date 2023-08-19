@@ -11,12 +11,13 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
+    "dayjs-nuxt": "^1.1.2",
     "nuxt": "^3.6.5"
   },
   "dependencies": {
     "@formkit/icons": "latest",
     "@formkit/nuxt": "latest",
-    "@hexdigital/nuxt-datocms": "^1.1.5",
+    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "postcss-custom-media": "^10.0.0",
     "postcss-mixins": "^9.0.4"

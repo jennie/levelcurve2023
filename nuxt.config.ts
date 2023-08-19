@@ -5,12 +5,13 @@ export default defineNuxtConfig({
       datoKey: process.env.DATO_CMS_TOKEN,
     },
   },
-  modules: ["@formkit/nuxt", "@hexdigital/nuxt-datocms", "@nuxtjs/tailwindcss"],
+  modules: [
+    "@formkit/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxt/image",
+    "dayjs-nuxt",
+  ],
   css: ["~/assets/css/index.css"],
-  datocms: {
-    publicReadOnlyToken: process.env.DATO_CMS_TOKEN,
-    endpoint: "https://graphql.datocms.com",
-  },
   postcss: {
     plugins: {
       "postcss-mixins": {},

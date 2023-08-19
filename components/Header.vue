@@ -54,7 +54,7 @@ nav {
       margin-bottom: 0;
 
       & a {
-        @apply text-center block transition-all md:rounded-full;
+        @apply text-center block transition-all rounded-full;
         height: 6rem;
         width: 6rem;
         line-height: 6rem;

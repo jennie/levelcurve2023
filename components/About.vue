@@ -1,7 +1,7 @@
 <template>
   <section id="about">
     <div
-      class="max-w-container mx-auto p-6 md:p-8 my-0 grid grid-cols-6 gap-12">
+      class="max-w-container mx-auto p-6 md:p-8 my-0 flex flex-wrap md:grid md:grid-cols-6 gap-12">
       <div class="about-us box a">
         <div v-html="data.homePage.about" />
       </div>
@@ -42,34 +42,36 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
   h2 {
     @apply text-2xl;
   }
+
   & .box {
-    @apply flex-1 m-0 mb-1 p-6 bg-white border-4 border-light-gray text-black md:m-0 mb-6;
+    @apply m-0 w-full p-6 bg-white border-4 border-light-gray text-black md:m-0 mb-6;
     box-shadow: 10px 10px 0px 0px #000;
 
     & h2 {
       @apply m-0;
     }
+
     & p {
       @apply mb-2;
+
       &:last-child {
         @apply m-0;
       }
     }
 
     & .service-list {
-      & li:before {
-        content: "– ";
-      }
-
       padding: 0 0 0 13px;
       margin: 0;
       list-style: none;
       text-indent: -13px;
+
+      & li:before {
+        content: "– ";
+      }
     }
 
     &.quote {
       @apply bg-pink text-white;
-
       box-shadow: 10px 10px 0px 0px #000;
 
       & blockquote {
@@ -80,7 +82,6 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
           @media (--tablet), (--desktop), (--desktop-xl) {
             font-size: 1.2rem;
           }
-
           color: #fff;
         }
 
@@ -91,9 +92,6 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
             font-style: italic;
             text-align: right;
             margin: 0;
-
-            &.client {
-            }
 
             &.name {
               &:before {
