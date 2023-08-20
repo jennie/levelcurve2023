@@ -25,14 +25,17 @@
         </p>
       </div>
 
-      <section
+      <transition-group
+        name="project-fade"
+        tag="section"
+        mode="out-in"
         id="projects"
-        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-24 gap-x-12 min-h-full">
+        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-24 gap-x-12">
         <ProjectItem
           v-for="(project, index) in filteredProjects"
-          :key="index"
+          :key="project.id"
           :project="project" />
-      </section>
+      </transition-group>
     </div>
   </section>
 </template>
@@ -107,6 +110,19 @@ const scrollToTags = () => {
 </script>
 <style>
 #projects {
+  .project-fade-enter-active,
+  .project-fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .project-fade-enter-from,
+  .project-fade-leave-to {
+    opacity: 0;
+  }
+  .project-fade-enter-to,
+  .project-fade-leave-from {
+    opacity: 1;
+  }
+
   & .project {
     @apply rounded-sm bg-white mt-24 md:mt-0;
 

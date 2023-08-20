@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <div class="level-container">
     <div id="sections">
       <About />
@@ -7,5 +8,6 @@
       <Friends />
       <Contact />
     </div>
+    <Footer />
   </div>
 </template>

@@ -43,13 +43,14 @@ section {
 
   &#contact {
     background-image: url("/img/yellow_curve.svg");
+    @apply h-full;
+    background-position: 0 -440px;
     padding-bottom: 2rem;
-
-    & footer {
-      text-align: center;
-      padding-top: 4rem;
-      color: theme(colors.primary);
-    }
+  }
+  footer {
+    text-align: center;
+    padding-top: 4rem;
+    color: theme(colors.primary);
   }
 }
 
