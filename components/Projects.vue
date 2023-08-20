@@ -30,7 +30,7 @@
         tag="section"
         mode="out-in"
         id="projects"
-        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-24 gap-x-12">
+        class="flex flex-wrap mt-6 md:mt-48 md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-6 md:gap-y-24 gap-x-12">
         <ProjectItem
           v-for="(project, index) in filteredProjects"
           :key="project.id"

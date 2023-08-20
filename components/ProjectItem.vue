@@ -1,6 +1,6 @@
 <template>
   <div
-    class="project"
+    class="project w-full"
     :class="project.featured ? 'featured' : ''"
     :data-tags="project.tags.map((a) => a.slug).join(' ')">
     <div class="cd flex justify-center items-center my-0 mx-auto">
