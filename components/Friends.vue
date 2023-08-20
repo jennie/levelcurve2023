@@ -2,15 +2,14 @@
 const QUERY = `
   query 
     {
-  allPeople(filter: {teamMember: {eq: true}}) {
+  allPeople(filter: {friend: {eq: true}}) {
     bio(markdown: true)
-    name
-    teamMember
+    name    
     title
     twitter
     photo {
       url(
-        imgixParams: {blendMode: normal, fit: facearea, facepad: "220", w: "300", h: "500", auto: compress}
+        imgixParams: {blendMode: normal, fit: facearea, facepad: "220", w: "300", h: "300", auto: compress}
       )
     }
   }
@@ -19,13 +18,14 @@ const QUERY = `
 const { data, error } = await useGraphqlQuery({ query: QUERY });
 </script>
 <template>
-  <section id="team">
-    <h2 class="section-title">Team</h2>
-    <div class="inner mx-auto p-6 md:p-12 my-0 md:max-w-3xl lg:max-w-5xl">
+  <section id="friends">
+    <h2 class="section-title">Friends of Level Curve</h2>
+    <div
+      class="inner grid grid-cols-2 gap-12 mx-auto p-6 md:p-12 my-0 max-w-5xl">
       <div
         v-for="person in data.allPeople"
         key="person.id"
-        class="person md:grid md:grid-cols-1 gap-12 lg:grid-cols-[1fr_2fr] my-12 mx-auto max-w-5xl lg:gap-16">
+        class="person my-12 mx-auto max-w-5xl lg:gap-16">
         <div class="name text-center">
           <h2>{{ person.name }}</h2>
           <h3>{{ person.title }}</h3>
@@ -49,8 +49,8 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
   </section>
 </template>
 <style>
-#team {
-  background-image: url("/img/blue_curve.svg");
+#friends {
+  background-image: url("/img/black_curve.svg");
 
   .person {
     .bio {
@@ -58,7 +58,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
       border: solid 3px theme(colors.light-gray);
       box-shadow: 10px 10px 0px 0px #fff;
       & p {
-        @apply text-xl mb-4;
+        @apply text-base mb-2;
 
         &:last-child {
           @apply m-0;
@@ -76,25 +76,6 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
 
       & h2 {
         @apply text-3xl;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      @apply grid gap-16;
-      grid-template-areas: "name content";
-      grid-auto-rows: minmax(100px, 1fr);
-
-      &:nth-child(odd) {
-        grid-template-areas: "content name";
-        grid-template-columns: 2fr 1fr;
-      }
-
-      & .name {
-        grid-area: name;
-      }
-
-      & .bio {
-        grid-area: content;
       }
     }
   }

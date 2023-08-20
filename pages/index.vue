@@ -3,8 +3,9 @@
     <div id="sections">
       <About />
       <Projects />
-      <!-- 
       <Team />
+      <Friends />
+      <!-- 
       <Contact /> -->
     </div>
   </div>

@@ -21,7 +21,7 @@
       </div>
       <section
         id="projects"
-        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-3 project-list gap-y-24 gap-x-12">
+        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-24 gap-x-12">
         <ProjectItem
           v-for="(project, index) in filteredProjects"
           :key="index"

@@ -30,6 +30,7 @@ module.exports = {
         pink: "#EC008C",
         purple: "#C4BAF2",
         "light-gray": "#F6F3F9",
+        peach: "#fe938c",
       },
     },
   },
