@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
   runtimeConfig: {
     public: {
       datoKey: process.env.DATO_CMS_TOKEN,
