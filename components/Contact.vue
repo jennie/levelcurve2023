@@ -14,14 +14,15 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
         netlify-honeypot="bot-field"
         action="/thank-you"
         netlify>
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
+
         <div class="select">
           <select name="service">
             <option disabled selected>
               What service are you interested in?
             </option>
-            <option
-              v-for="service in data.allServices"
-              value="{{ service.name }}">
+            <option v-for="service in data.allServices" :value="service.name">
               {{ service.name }}
             </option>
           </select>
@@ -31,7 +32,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
             name="message"
             rows="4"
             placeholder="Briefly describe what you are looking for."
-            required></textarea>
+            required />
         </div>
         <div class="textbox">
           <input type="text" name="name" placeholder="Your name" required />

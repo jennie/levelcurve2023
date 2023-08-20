@@ -21,7 +21,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
   <section id="friends">
     <h2 class="section-title">Friends of Level Curve</h2>
     <div
-      class="inner grid grid-cols-2 gap-12 mx-auto p-6 md:p-12 my-0 max-w-5xl">
+      class="inner flex flex-wrap md:grid md:grid-cols-2 gap-12 mx-auto p-6 md:p-12 my-0 max-w-5xl">
       <div
         v-for="person in data.allPeople"
         key="person.id"
@@ -43,7 +43,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
               class="max-full" />
           </div>
         </div>
-        <div class="bio" v-if="person.bio" v-html="person.bio" />
+        <div class="bio max-w-sm" v-if="person.bio" v-html="person.bio" />
       </div>
     </div>
   </section>
