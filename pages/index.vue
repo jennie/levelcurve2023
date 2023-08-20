@@ -5,8 +5,7 @@
       <Projects />
       <Team />
       <Friends />
-      <!-- 
-      <Contact /> -->
+      <Contact />
     </div>
   </div>
 </template>

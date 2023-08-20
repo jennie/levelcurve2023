@@ -130,21 +130,10 @@ a.btn-on {
 }
 
 form {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 300px;
-
-  @media (--tablet), (--desktop) {
-    max-width: 486px;
-  }
+  @apply flex flex-wrap m-0 mx-auto max-w-lg;
 
   & .btn-primary {
-    background-color: #4848f0;
-
-    &:hover {
-      background-position: ;
-    }
+    @apply bg-primary;
   }
 }
 
@@ -164,8 +153,11 @@ form {
 
 input {
   @mixin field-input;
+  @apply w-full flex-1;
 }
-
+.textbox {
+  @apply w-full;
+}
 textarea {
   @mixin field-input;
   height: 150px;

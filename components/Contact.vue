@@ -1,3 +1,8 @@
+<script setup>
+const QUERY = `query { allServices { name } }`;
+const { data, error } = await useGraphqlQuery({ query: QUERY });
+</script>
+
 <template>
   <section id="contact">
     <h2 class="section-title">Get in touch!</h2>
@@ -16,14 +21,13 @@
               What service are you interested in?
             </option>
             <option
-              each="loop=service in dato.service"
+              v-for="service in data.allServices"
               value="{{ service.name }}">
               {{ service.name }}
             </option>
           </select>
         </div>
         <div class="textbox">
-          <label for="message">Tell us a bit about your project</label>
           <textarea
             name="message"
             rows="4"
@@ -31,18 +35,16 @@
             required></textarea>
         </div>
         <div class="textbox">
-          <label for="name">Your name</label>
           <input type="text" name="name" placeholder="Your name" required />
         </div>
         <div class="textbox">
-          <label for="email">Your email</label>
           <input
             type="email"
             name="email"
             placeholder="you@youremail.com"
             required />
         </div>
-        <button type="submit">Send</button>
+        <button class="btn btn-primary" type="submit">Send</button>
       </form>
     </div>
   </section>
