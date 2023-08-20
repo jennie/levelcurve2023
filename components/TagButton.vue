@@ -1,6 +1,6 @@
 <template>
   <button
-    class="btn btn-tag"
+    class="btn btn-tag m-1"
     :class="{ 'btn-on': isActive, 'btn-off': !isActive }"
     @click="selectTag">
     {{ tag.title }}

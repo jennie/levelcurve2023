@@ -1,8 +1,8 @@
 <template>
-  <section id="main">
+  <section id="main" ref="projectSection">
     <div class="max-w-container mx-auto p-6 md:p-12 my-0">
       <h2 class="section-title">Projects</h2>
-      <div id="tag-buttons">
+      <div id="tag-buttons" ref="tagButtons">
         <button
           class="btn reset"
           :class="{
@@ -19,9 +19,15 @@
           :selectedTags="selectedTags"
           :onSelect="selectTag" />
       </div>
+      <div v-if="filteredProjects.length === 0">
+        <p class="font-display text-2xl text-center text-pink mt-12">
+          No projects found for the selected tags.
+        </p>
+      </div>
+
       <section
         id="projects"
-        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-24 gap-x-12">
+        class="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-4 project-list gap-y-24 gap-x-12 min-h-full">
         <ProjectItem
           v-for="(project, index) in filteredProjects"
           :key="index"
@@ -77,6 +83,7 @@ const selectTag = (tagSlug) => {
   } else {
     selectedTags.value.push(tagSlug);
   }
+  scrollToTags(); // Add this line
 };
 
 const filteredProjects = computed(() => {
@@ -90,6 +97,12 @@ const filteredProjects = computed(() => {
 });
 const selectAllTags = () => {
   selectedTags.value = [];
+};
+const projectSection = ref(null);
+const scrollToTags = () => {
+  nextTick(() => {
+    projectSection.value.scrollIntoView({ behavior: "smooth" });
+  });
 };
 </script>
 <style>
