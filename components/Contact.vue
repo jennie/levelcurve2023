@@ -12,9 +12,8 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
         name="contact"
         method="POST"
         netlify-honeypot="bot-field"
-        action="thank-you"
+        action="/thank-you"
         netlify>
-        <input name="bot-field" style="display: none" />
         <div class="select">
           <select name="service">
             <option disabled selected>
