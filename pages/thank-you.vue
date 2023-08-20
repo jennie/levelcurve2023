@@ -3,6 +3,7 @@
     <div
       class="flex flex-wrap justify-space-between items-flex-start p-12 max-w-container mx-auto">
       <nuxt-img
+        provider="netlify"
         src="/img/level_curve_logo.svg"
         width="200"
         class="block w-[500px] mb-24 mx-auto" />

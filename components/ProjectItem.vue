@@ -10,7 +10,7 @@
         width="400"
         :src="project.images[0].url"
         class="mx-auto" />
-      <nuxt-img v-else src="/img/gem.png" class="mx-auto" />
+      <nuxt-img provider="netlify" v-else src="/img/gem.png" class="mx-auto" />
     </div>
 
     <div class="copy">
