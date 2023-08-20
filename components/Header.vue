@@ -2,10 +2,7 @@
   <div id="banner">
     <div
       class="flex flex-wrap justify-space-between items-flex-start p-12 max-w-container mx-auto">
-      <nuxt-img
-        provider="netlify"
-        src="/img/level_curve_logo.svg"
-        class="block max-w-full" />
+      <nuxt-img src="/img/level_curve_logo.svg" class="block max-w-full" />
       <nav class="ml-auto w-full md:w-auto">
         <ul class="menu">
           <li><a class="about" href="/#about">About</a></li>

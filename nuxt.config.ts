@@ -1,11 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
-  nitro: {
-    prerender: {
-      routes: ["/"],
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     routes: ["/", "/thank-you"],
+  //   },
+  // },
   runtimeConfig: {
     public: {
       datoKey: process.env.DATO_CMS_TOKEN,
@@ -13,7 +13,9 @@ export default defineNuxtConfig({
   },
   image: {
     domains: ["datocms-assets.com"],
+    provider: "ipx",
   },
+
   modules: [
     "@formkit/nuxt",
     "@nuxtjs/tailwindcss",
