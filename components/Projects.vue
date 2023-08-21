@@ -42,7 +42,7 @@
 <script setup>
 const QUERY = `
   query {
-    allProjects(first: 100,orderBy: date_DESC) {
+    allProjects(first: 100,orderBy: position_DESC) {
       clients {
         name
       }
