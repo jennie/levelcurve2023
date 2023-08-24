@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 
 body {
-  @apply m-0 p-0 bg-light-gray;
+  @apply m-0 p-0 bg-light-gray h-full;
+
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-image: url("/img/yellow_curve.svg");
 }
 
 h1,
@@ -42,8 +46,6 @@ section {
   }
 
   &#contact {
-    background-image: url("/img/yellow_curve.svg");
-    @apply h-full;
     background-position: 0 -440px;
     padding-bottom: 2rem;
   }

@@ -2,8 +2,10 @@
   <div id="banner">
     <div
       class="flex flex-wrap justify-space-between items-flex-start p-12 max-w-container mx-auto">
-      <nuxt-img src="/img/level_curve_logo.svg" class="block max-w-full" />
-      <nav class="ml-auto w-full md:w-auto">
+      <nuxt-img
+        src="/img/level_curve_logo.svg"
+        class="block mx-auto md:mx-0 max-w-full" />
+      <nav class="lg:ml-auto my-4 w-full mx-auto md:mx-0 md:w-auto">
         <ul class="menu">
           <li><a class="about" href="/#about">About</a></li>
           <li><a class="projects" href="/#main">Projects</a></li>
@@ -12,7 +14,7 @@
         </ul>
       </nav>
       <div
-        class="tagline font-mono font-normal text-2xl md:text-3xl lg:text-4xl italic md:mt-8 md:pt-8"
+        class="tagline font-mono font-normal text-2xl md:text-3xl lg:text-4xl italic lg:mt-8 lg:pt-8"
         v-html="data.homePage.copy" />
     </div>
   </div>
@@ -54,10 +56,8 @@ nav {
       margin-bottom: 0;
 
       & a {
-        @apply text-center block transition-all rounded-full;
-        height: 6rem;
-        width: 6rem;
-        line-height: 6rem;
+        @apply text-center block transition-all rounded-full md:h-24 md:w-24 md:leading-[6rem] text-white font-bold;
+
         color: inherit;
         font-size: 1rem;
         transition-timing-function: cubic-bezier(0.03, 0.82, 0.34, 0.99);
@@ -71,9 +71,11 @@ nav {
 }
 
 @define-mixin hover $name, $color {
-  nav ul li a.$(name):hover {
-    color: $color;
-    box-shadow: inset 0 0 0 2.5px $color;
+  @media screen and (min-width: 768px) {
+    nav ul li a.$(name):hover {
+      color: $color;
+      box-shadow: inset 0 0 0 2.5px $color;
+    }
   }
 }
 
