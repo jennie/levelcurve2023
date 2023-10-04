@@ -157,7 +157,7 @@ const scrollToTags = () => {
       }
 
       & h3 {
-        @apply text-primary;
+        color: #d6d6ff;
       }
     }
 
