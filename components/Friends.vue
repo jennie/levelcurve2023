@@ -32,7 +32,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
           <p class="twitter py-4" v-if="person.twitter">
             <a
               class="btn btn-primary"
-              href="https://twitter.com/{{ person.twitter }}"
+              :href="'https://twitter.com/' + person.twitter"
               >{{ person.twitter }}</a
             >
           </p>
