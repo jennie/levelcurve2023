@@ -10,7 +10,7 @@ const QUERY = `
     twitter
     photo {
       url(
-        imgixParams: {blendMode: normal, fit: facearea, facepad: "220", w: "300", h: "500", auto: compress}
+        imgixParams: {blendMode: normal, fit: facearea, facepad: "220", w: "600", h: "1000"}
       )
     }
   }
@@ -37,7 +37,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
               >{{ person.twitter }}</a
             >
           </p>
-          <div class="headshot justify-center flex">
+          <div class="headshot justify-center flex mt-4">
             <nuxt-img
               v-if="person.photo"
               :src="person.photo.url"

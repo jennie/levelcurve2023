@@ -64,7 +64,10 @@ const QUERY = `
       }
       title
       images {
-        url
+        url(
+        imgixParams: {auto: compress}
+      )
+        
       }
       tags {
         title
