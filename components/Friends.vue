@@ -9,7 +9,7 @@ const QUERY = `
     twitter
     photo {
       url(
-        imgixParams: {auto:format, blendMode: normal, fit: facearea, facepad: "220", w: "300", h: "300"}
+        imgixParams: {fit: facearea, facepad: "220", w: "300", h: "300"}
       )
     }
   }
