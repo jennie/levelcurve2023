@@ -1,5 +1,5 @@
 <template>
-  <div id="banner">
+  <div id="banner" class="relative">
     <div
       class="flex flex-wrap justify-space-between items-flex-start p-12 max-w-container mx-auto">
       <nuxt-img
@@ -20,6 +20,8 @@
   </div>
 </template>
 <script setup>
+import SocialLinks from "./SocialLinks.vue";
+
 const QUERY = `
   query {
     homePage {
@@ -43,6 +45,15 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
       @apply m-0;
     }
   }
+}
+
+.social-links svg {
+  transition: color 0.3s ease;
+  color: #000; /* Black color */
+}
+
+.social-links a:hover svg {
+  color: #6366f1; /* Change to theme primary color on hover */
 }
 
 nav {

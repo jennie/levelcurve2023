@@ -1,4 +1,6 @@
 <script setup>
+import SocialLinks from "./SocialLinks.vue";
+
 const QUERY = `query { allServices { name } }`;
 const { data, error } = await useGraphqlQuery({ query: QUERY });
 </script>
@@ -6,6 +8,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
 <template>
   <section id="contact">
     <h2 class="section-title">Get in touch!</h2>
+    <SocialLinks />
     <div class="max-w-container mx-auto p-6 md:p-12 my-0">
       <form
         class="contact"
