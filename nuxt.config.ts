@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: "netlify",
   },
-  ssr: true,
+  ssr: false,
   // nitro: {
   //   prerender: {
   //     routes: ["/", "/thank-you"],
