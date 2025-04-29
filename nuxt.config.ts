@@ -1,18 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
-    preset: "netlify_static",
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
+    preset: "netlify",
+    future: {
+      nativeSWR: true,
     },
   },
   ssr: false,
-  // nitro: {
-  //   prerender: {
-  //     routes: ["/", "/thank-you"],
-  //   },
-  // },
   runtimeConfig: {
     public: {
       datoKey: process.env.DATO_CMS_TOKEN,
