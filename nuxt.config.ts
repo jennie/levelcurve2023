@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
-    preset: "netlify",
+    preset: "netlify_static",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
   },
   ssr: false,
   // nitro: {
@@ -31,5 +35,8 @@ export default defineNuxtConfig({
       "postcss-mixins": {},
       "postcss-custom-media": {},
     },
+  },
+  routeRules: {
+    "/**": { static: true },
   },
 });
